@@ -9,7 +9,7 @@ A live macOS app switcher for Stream Deck Neo. Six keys show running apps with t
 
 ## Requirements
 
-Stream Deck Neo, macOS 12 or later (Apple Silicon or Intel), and Stream Deck software 6.6 or later. The helper is a universal binary. Physical-device testing was performed on Apple Silicon with Stream Deck 7.6; Intel hardware and minimum-version testing are still welcome. Windows and other Stream Deck layouts are not supported.
+Stream Deck Neo, macOS 12 or later (Apple Silicon or Intel), and Stream Deck software 6.9 or later. The helper is a universal binary. Physical-device testing was performed on Apple Silicon with Stream Deck 7.6; Intel hardware and minimum-version testing are still welcome. Windows and other Stream Deck layouts are not supported.
 
 ## Install
 

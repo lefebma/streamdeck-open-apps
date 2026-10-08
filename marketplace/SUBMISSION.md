@@ -2,12 +2,12 @@
 
 ## Listing details
 
-- Proposed pricing: Free (confirm in Maker Console).
+- Pricing: Free.
 - Name: **Open Apps** (confirm availability in Maker Console).
-- Author: **Marc Lefebvre** (must match the Maker organization).
+- Author: **ELS Partners** (Maker organization).
 - Type: Stream Deck plugin. Device: Stream Deck Neo only.
-- Requirements: macOS 12+, Apple Silicon or Intel; Stream Deck 6.6+.
-- Language: English. Version: 0.1.0.0.
+- Requirements: macOS 12+, Apple Silicon or Intel; Stream Deck 6.9+.
+- Language: English. Version: 0.1.1.0.
 - UUID: `com.marclefebvre.openapps` (keep unchanged after publication).
 - Source: https://github.com/lefebma/streamdeck-open-apps
 - Support: https://github.com/lefebma/streamdeck-open-apps/issues
@@ -19,7 +19,7 @@ Switch between your running Mac apps from Stream Deck Neo. Open Apps shows six a
 
 App positions stay stable when you switch focus. Newly opened apps join the list, and closed apps disappear automatically. Add the navigator to a new page in your existing profile or use the included standalone Open Apps profile. Installation and startup preserve your selected profile.
 
-Requires Stream Deck Neo, macOS 12 or later, and Stream Deck software 6.6 or later. Supports Apple Silicon and Intel Macs. Runs locally without accounts, telemetry, or Accessibility and Automation permissions. Windows and other Stream Deck models are not supported.
+Requires Stream Deck Neo, macOS 12 or later, and Stream Deck software 6.9 or later. Supports Apple Silicon and Intel Macs. Runs locally without accounts, telemetry, or Accessibility and Automation permissions. Windows and other Stream Deck models are not supported.
 
 ## Release notes
 

@@ -2,14 +2,14 @@
   "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
   "UUID": "com.marclefebvre.openapps",
   "Name": "Open Apps",
-  "Author": "Marc Lefebvre",
+  "Author": "ELS Partners",
   "Description": "A live app switcher for macOS: app icons, stable positions, and paging for Stream Deck Neo.",
-  "Version": "0.1.0.0",
+  "Version": "0.1.1.0",
   "Category": "Open Apps",
   "CategoryIcon": "imgs/logo",
   "Icon": "imgs/plugin",
   "CodePath": "bin/plugin.js",
-  "SDKVersion": 2,
+  "SDKVersion": 3,
   "Nodejs": {
     "Version": "20",
     "Debug": "disabled"
@@ -21,7 +21,7 @@
     }
   ],
   "Software": {
-    "MinimumVersion": "6.6"
+    "MinimumVersion": "6.9"
   },
   "Profiles": [
     {
@@ -102,5 +102,6 @@
       ]
     }
   ],
-  "URL": "https://github.com/lefebma/streamdeck-open-apps"
+  "URL": "https://github.com/lefebma/streamdeck-open-apps",
+  "SupportURL": "https://github.com/lefebma/streamdeck-open-apps/issues"
 }
