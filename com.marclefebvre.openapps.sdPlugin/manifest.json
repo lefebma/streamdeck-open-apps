@@ -1,0 +1,106 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "UUID": "com.marclefebvre.openapps",
+  "Name": "Open Apps",
+  "Author": "Marc Lefebvre",
+  "Description": "A live app switcher for macOS: app icons, stable positions, and paging for Stream Deck Neo.",
+  "Version": "0.1.0.0",
+  "Category": "Open Apps",
+  "CategoryIcon": "imgs/logo",
+  "Icon": "imgs/plugin",
+  "CodePath": "bin/plugin.js",
+  "SDKVersion": 2,
+  "Nodejs": {
+    "Version": "20",
+    "Debug": "disabled"
+  },
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "12"
+    }
+  ],
+  "Software": {
+    "MinimumVersion": "6.6"
+  },
+  "Profiles": [
+    {
+      "Name": "profiles/open-apps",
+      "DeviceType": 9,
+      "AutoInstall": true,
+      "Readonly": false,
+      "DontAutoSwitchWhenInstalled": true
+    }
+  ],
+  "Actions": [
+    {
+      "UUID": "com.marclefebvre.openapps.open",
+      "Name": "Open App Switcher",
+      "Tooltip": "Switch to the live Open Apps profile on your Neo.",
+      "Icon": "imgs/action-apps",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/key",
+          "Title": "Open Apps",
+          "TitleAlignment": "bottom",
+          "FontSize": 10
+        }
+      ]
+    },
+    {
+      "UUID": "com.marclefebvre.openapps.app",
+      "Name": "Live App",
+      "Tooltip": "Place on the first six keys of a Neo profile. Shows a running app; press to switch to it.",
+      "Icon": "imgs/action-apps",
+      "Controllers": [
+        "Keypad"
+      ],
+      "SupportedInMultiActions": false,
+      "States": [
+        {
+          "Image": "imgs/key",
+          "TitleAlignment": "bottom",
+          "FontSize": 10
+        }
+      ]
+    },
+    {
+      "UUID": "com.marclefebvre.openapps.previous",
+      "Name": "Previous Apps",
+      "Tooltip": "Show the previous six running apps.",
+      "Icon": "imgs/action-previous",
+      "Controllers": [
+        "Keypad"
+      ],
+      "SupportedInMultiActions": false,
+      "States": [
+        {
+          "Image": "imgs/previous",
+          "TitleAlignment": "bottom",
+          "FontSize": 10
+        }
+      ]
+    },
+    {
+      "UUID": "com.marclefebvre.openapps.next",
+      "Name": "Next Apps",
+      "Tooltip": "Show the next six running apps.",
+      "Icon": "imgs/action-next",
+      "Controllers": [
+        "Keypad"
+      ],
+      "SupportedInMultiActions": false,
+      "States": [
+        {
+          "Image": "imgs/next",
+          "TitleAlignment": "bottom",
+          "FontSize": 10
+        }
+      ]
+    }
+  ],
+  "URL": "https://github.com/lefebma/streamdeck-open-apps"
+}

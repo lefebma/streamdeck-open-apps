@@ -1,0 +1,32 @@
+name: Build and validate
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+      - run: lipo -verify_arch arm64 x86_64 com.marclefebvre.openapps.sdPlugin/bin/open-apps-helper
+      - run: codesign --verify --strict com.marclefebvre.openapps.sdPlugin/bin/open-apps-helper
+      - run: npm run validate
+      - run: npm run pack
+      - uses: actions/upload-artifact@v4
+        with:
+          name: open-apps-installer
+          path: dist/*.streamDeckPlugin
+          if-no-files-found: error

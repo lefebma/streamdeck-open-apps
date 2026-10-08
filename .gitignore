@@ -1,0 +1,5 @@
+node_modules/
+com.marclefebvre.openapps.sdPlugin/bin/
+com.marclefebvre.openapps.sdPlugin/logs/
+dist/
+.DS_Store
