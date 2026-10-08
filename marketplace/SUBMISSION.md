@@ -1,5 +1,7 @@
 # Marketplace submission
 
+Submitted for Elgato review. The Marketplace listing is not live yet; automatic publication after approval is enabled.
+
 ## Listing details
 
 - Pricing: Free.
@@ -33,12 +35,11 @@ Initial release: six live application keys, native icons, foreground highlightin
 - Thumbnail: `marketplace/thumbnail.png`. Gallery: `gallery-1.png`, `gallery-2.png`, `gallery-3.png` (1920 × 960). These are clearly labeled illustrations using original sample app icons and actual plugin key rendering. Review these before uploading. Regenerate with `npm run media`.
 - If requested, record physical Neo app activation and paging; mockups do not replace hardware evidence.
 
-## Remaining steps
+## Review status
 
-1. Sign in/register at https://maker.elgato.com/ and complete organization onboarding. Review the Maker Agreement yourself.
-2. Confirm name availability, author/organization match, and pricing. Name and monetization cannot be changed directly afterward.
-3. Use Create product to add the installer, description, links, thumbnail, three gallery items, and release notes.
-4. Submit for Elgato review. GitHub publication does not publish to Marketplace.
+Await Elgato's review result and address any requested changes in a new version. Keep the plugin UUID unchanged.
+
+The upload wizard required manifest SDK 3 and Stream Deck 6.9 or later for DRM compatibility. The JavaScript SDK remains @elgato/streamdeck 2.1.2, which supports this configuration.
 
 Intel hardware and minimum-version macOS/Stream Deck testing remain unverified. Both helper architectures compile; physical-device testing is on Apple Silicon with Stream Deck 7.6.
 
