@@ -9,7 +9,7 @@ Submitted for Elgato review. The Marketplace listing is not live yet; automatic 
 - Author: **ELS Partners** (Maker organization).
 - Type: Stream Deck plugin. Device: Stream Deck Neo only.
 - Requirements: macOS 12+, Apple Silicon or Intel; Stream Deck 6.9+.
-- Language: English. Version: 0.1.1.0.
+- Language: English. Version: 0.1.2.0.
 - UUID: `com.marclefebvre.openapps` (keep unchanged after publication).
 - Source: https://github.com/lefebma/streamdeck-open-apps
 - Support: https://github.com/lefebma/streamdeck-open-apps/issues
@@ -25,7 +25,9 @@ Requires Stream Deck Neo, macOS 12 or later, and Stream Deck software 6.9 or lat
 
 ## Release notes
 
-Initial release: six live application keys, native icons, foreground highlighting, stable positions, paging, and app activation. Includes a universal macOS helper and an optional standalone Stream Deck Neo profile. Existing profiles and pages remain available.
+Version 0.1.2 fixes the review feedback that the plugin showed no apps and the keys did nothing: the packaged helper lost its executable permission and could not start. The plugin now restores it before launching.
+
+Features: six live application keys, native icons, foreground highlighting, stable positions, paging, and app activation. Includes a universal macOS helper and an optional standalone Stream Deck Neo profile. Existing profiles and pages remain available.
 
 ## Submission files
 
