@@ -1,5 +1,6 @@
 import streamDeck, { action, SingletonAction, type KeyDownEvent, type WillAppearEvent, type WillDisappearEvent } from '@elgato/streamdeck';
-import { spawn, type ChildProcessWithoutNullStreams } from 'node:child_process';
+import { spawn, execFileSync, type ChildProcessWithoutNullStreams } from 'node:child_process';
+import { chmodSync } from 'node:fs';
 import { createInterface } from 'node:readline';
 import { fileURLToPath } from 'node:url';
 import { randomUUID } from 'node:crypto';
@@ -54,7 +55,12 @@ function failPending() {
 
 function startHelper() {
   if (shuttingDown || helper) return;
-  const process = spawn(fileURLToPath(new URL('./open-apps-helper', import.meta.url)), [], { stdio: ['pipe', 'pipe', 'pipe'] });
+  const helperPath = fileURLToPath(new URL('./open-apps-helper', import.meta.url));
+  // Marketplace/installer packages are zip files that drop the executable bit; restore it before launching.
+  try { chmodSync(helperPath, 0o755); } catch (error) { streamDeck.logger.warn('Could not mark helper executable', String(error)); }
+  // A downloaded package can carry a quarantine flag that blocks an unsigned helper; clearing it is best effort.
+  try { execFileSync('/usr/bin/xattr', ['-d', 'com.apple.quarantine', helperPath], { stdio: 'ignore' }); } catch { /* no flag set */ }
+  const process = spawn(helperPath, [], { stdio: ['pipe', 'pipe', 'pipe'] });
   helper = process;
   createInterface({ input: process.stdout }).on('line', line => {
     try {

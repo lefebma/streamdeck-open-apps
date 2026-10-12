@@ -7,7 +7,8 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { once } from 'node:events';
 
-test('the built plugin renders eight keys, pages, and activates the displayed app', { timeout: 15000 }, async () => {
+// 0o644 reproduces installed packages, whose zip archive drops the helper's executable bit.
+for (const helperMode of [0o755, 0o644]) test(`the built plugin renders eight keys, pages, and activates the displayed app (helper mode ${helperMode.toString(8)})`, { timeout: 15000 }, async () => {
   const root = await mkdtemp(join(tmpdir(), 'open-apps-integration-'));
   await mkdir(join(root, 'bin'));
   await copyFile('com.marclefebvre.openapps.sdPlugin/manifest.json', join(root, 'manifest.json'));
@@ -20,7 +21,7 @@ const send = value => process.stdout.write(JSON.stringify(value)+'\\n');
 const snapshot = () => send({type:'snapshot',apps,activePid});
 require('node:readline').createInterface({input:process.stdin}).on('line',line=>{const m=JSON.parse(line);activePid=m.pid;send({type:'result',requestId:m.requestId,ok:true});snapshot();}).on('close',()=>process.exit(0));
 snapshot();
-`, { mode: 0o755 });
+`, { mode: helperMode });
   const server = new WebSocketServer({ host: '127.0.0.1', port: 0 });
   await once(server, 'listening');
   let plugin;

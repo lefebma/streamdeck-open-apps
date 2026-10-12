@@ -4,7 +4,7 @@
   "Name": "Open Apps",
   "Author": "ELS Partners",
   "Description": "A live app switcher for macOS: app icons, stable positions, and paging for Stream Deck Neo.",
-  "Version": "0.1.1.0",
+  "Version": "0.1.2.0",
   "Category": "Open Apps",
   "CategoryIcon": "imgs/logo",
   "Icon": "imgs/plugin",
